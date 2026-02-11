@@ -1,3 +1,62 @@
+/* CSS Custom Properties (Variables) for Theming */
+:root {
+    /* Default Green Theme */
+    --primary-color: #39ff14;
+    --primary-hover: #00ff00;
+    --secondary-color: #2e8b57;
+    --secondary-hover: #228b22;
+    --accent-color: #1a7d1a;
+    --background-color: #e8ffe8;
+    --surface-color: #f0fff0;
+    --surface-white: white;
+    --text-primary: #0f4d0f;
+    --text-secondary: #2d5016;
+    --text-muted: #4d8b4d;
+    --border-color: #90ee90;
+    --tag-background: #d4ffd4;
+    --tag-text: #1a7d1a;
+    --shadow-color: rgba(0, 100, 0, 0.1);
+    --shadow-hover: rgba(0, 100, 0, 0.15);
+    --modal-overlay: rgba(0, 50, 0, 0.6);
+    --action-btn-bg: rgba(0, 100, 0, 0.7);
+    --action-btn-hover: rgba(0, 100, 0, 0.9);
+    --action-edit-bg: rgba(57, 255, 20, 0.8);
+    --action-edit-hover: rgba(0, 255, 0, 0.9);
+    --action-delete-bg: rgba(0, 255, 0, 0.8);
+    --action-delete-hover: rgba(57, 255, 20, 0.9);
+    --danger-color: #00ff00;
+    --danger-hover: #39ff14;
+}
+
+/* Pink and Red Theme */
+.theme-pink-red {
+    --primary-color: #FF69B4;
+    --primary-hover: #FF1493;
+    --secondary-color: #DC143C;
+    --secondary-hover: #B22222;
+    --accent-color: #C71585;
+    --background-color: #FFF0F5;
+    --surface-color: #FFF5F8;
+    --surface-white: #FFFFFF;
+    --text-primary: #8B0A1A;
+    --text-secondary: #A52A2A;
+    --text-muted: #CD5C5C;
+    --border-color: #FFB6C1;
+    --tag-background: #FFE4E9;
+    --tag-text: #C71585;
+    --shadow-color: rgba(220, 20, 60, 0.1);
+    --shadow-hover: rgba(220, 20, 60, 0.15);
+    --modal-overlay: rgba(139, 10, 26, 0.6);
+    --action-btn-bg: rgba(220, 20, 60, 0.7);
+    --action-btn-hover: rgba(220, 20, 60, 0.9);
+    --action-edit-bg: rgba(255, 105, 180, 0.8);
+    --action-edit-hover: rgba(255, 20, 147, 0.9);
+    --action-delete-bg: rgba(220, 20, 60, 0.8);
+    --action-delete-hover: rgba(178, 34, 34, 0.9);
+    --danger-color: #DC143C;
+    --danger-hover: #B22222;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +66,14 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #0f4d0f;
-    background-color: #e8ffe8;
+    color: var(--text-primary);
+    background-color: var(--background-color);
 }
 
 /* Navigation */
 .navbar {
-    background: #f0fff0;
-    box-shadow: 0 2px 4px rgba(0,100,0,0.1);
+    background: var(--surface-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -31,7 +90,7 @@ body {
 }
 
 .nav-title {
-    color: #1a7d1a;
+    color: var(--accent-color);
     font-size: 1.5rem;
 }
 
@@ -54,8 +113,8 @@ body {
 }
 
 .flash-message {
-    background: #39ff14;
-    color: #0f4d0f;
+    background: var(--primary-color);
+    color: var(--text-primary);
     padding: 0.75rem;
     border-radius: 4px;
     margin-bottom: 0.5rem;
@@ -74,21 +133,21 @@ body {
 }
 
 .btn-primary {
-    background: #39ff14;
-    color: #0f4d0f;
+    background: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .btn-primary:hover {
-    background: #00ff00;
+    background: var(--primary-hover);
 }
 
 .btn-secondary {
-    background: #2e8b57;
+    background: var(--secondary-color);
     color: white;
 }
 
 .btn-secondary:hover {
-    background: #228b22;
+    background: var(--secondary-hover);
 }
 
 /* Auth Forms */
@@ -100,10 +159,10 @@ body {
 }
 
 .auth-form {
-    background: white;
+    background: var(--surface-white);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,100,0,0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
     width: 100%;
     max-width: 400px;
 }
@@ -111,7 +170,7 @@ body {
 .auth-form h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #1a7d1a;
+    color: var(--accent-color);
 }
 
 .form-group {
@@ -129,7 +188,7 @@ body {
 .form-group select {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #90ee90;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -144,16 +203,16 @@ body {
 }
 
 .auth-link a {
-    color: #39ff14;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 /* Gallery */
 .gallery-container {
-    background: white;
+    background: var(--surface-white);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,100,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .controls {
@@ -175,7 +234,7 @@ body {
 .search-input,
 .tag-filter {
     padding: 0.5rem;
-    border: 1px solid #90ee90;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -197,17 +256,17 @@ body {
 }
 
 .image-item {
-    background: white;
+    background: var(--surface-white);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,100,0,0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
 }
 
 .image-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,100,0,0.15);
+    box-shadow: 0 4px 12px var(--shadow-hover);
 }
 
 .image-item img {
@@ -224,11 +283,11 @@ body {
 .image-title {
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #1a7d1a;
+    color: var(--accent-color);
 }
 
 .image-description {
-    color: #2d5016;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     display: -webkit-box;
@@ -245,8 +304,8 @@ body {
 }
 
 .tag {
-    background: #d4ffd4;
-    color: #1a7d1a;
+    background: var(--tag-background);
+    color: var(--tag-text);
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -255,7 +314,7 @@ body {
 .loading {
     text-align: center;
     padding: 2rem;
-    color: #2d5016;
+    color: var(--text-secondary);
 }
 
 /* Modal */
@@ -267,11 +326,11 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,50,0,0.6);
+    background-color: var(--modal-overlay);
 }
 
 .modal-content {
-    background-color: white;
+    background-color: var(--surface-white);
     margin: 5% auto;
     padding: 2rem;
     border-radius: 8px;
@@ -290,11 +349,11 @@ body {
     top: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #2d5016;
+    color: var(--text-secondary);
 }
 
 .close:hover {
-    color: #0f4d0f;
+    color: var(--text-primary);
 }
 
 .preview-content {
@@ -316,17 +375,17 @@ body {
 
 .preview-details h3 {
     margin-bottom: 1rem;
-    color: #1a7d1a;
+    color: var(--accent-color);
 }
 
 .preview-details p {
     margin-bottom: 1rem;
-    color: #2d5016;
+    color: var(--text-secondary);
 }
 
 .preview-date {
     font-size: 0.9rem;
-    color: #4d8b4d;
+    color: var(--text-muted);
 }
 
 .preview-actions {
@@ -336,12 +395,12 @@ body {
 }
 
 .btn-danger {
-    background: #00ff00;
-    color: #0f4d0f;
+    background: var(--danger-color);
+    color: var(--text-primary);
 }
 
 .btn-danger:hover {
-    background: #39ff14;
+    background: var(--danger-hover);
 }
 
 .form-actions {
@@ -363,7 +422,7 @@ body {
 }
 
 .action-btn {
-    background: rgba(0,100,0,0.7);
+    background: var(--action-btn-bg);
     color: white;
     border: none;
     border-radius: 50%;
@@ -378,23 +437,23 @@ body {
 }
 
 .action-btn:hover {
-    background: rgba(0,100,0,0.9);
+    background: var(--action-btn-hover);
 }
 
 .action-btn.edit {
-    background: rgba(57,255,20,0.8);
+    background: var(--action-edit-bg);
 }
 
 .action-btn.edit:hover {
-    background: rgba(0,255,0,0.9);
+    background: var(--action-edit-hover);
 }
 
 .action-btn.delete {
-    background: rgba(0,255,0,0.8);
+    background: var(--action-delete-bg);
 }
 
 .action-btn.delete:hover {
-    background: rgba(57,255,20,0.9);
+    background: var(--action-delete-hover);
 }
 
 /* Responsive */
@@ -424,4 +483,31 @@ body {
         margin: 2% auto;
         width: 95%;
     }
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-selector label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.theme-selector select {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background-color: var(--surface-white);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.theme-selector select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 1px;
 }
