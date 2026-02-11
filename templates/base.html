@@ -10,12 +10,19 @@
     <nav class="navbar">
         <div class="nav-container">
             <h1 class="nav-title">Image Gallery</h1>
-            {% if session.user_id %}
             <div class="nav-links">
+                <div class="theme-selector">
+                    <label for="themeSelect">Theme:</label>
+                    <select id="themeSelect">
+                        <option value="">Green (Default)</option>
+                        <option value="theme-pink-red">Pink & Red</option>
+                    </select>
+                </div>
+                {% if session.user_id %}
                 <span>Welcome, {{ session.username }}!</span>
                 <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+                {% endif %}
             </div>
-            {% endif %}
         </div>
     </nav>
 
@@ -34,5 +41,6 @@
     </main>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 </body>
 </html>
